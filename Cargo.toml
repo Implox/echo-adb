@@ -1,0 +1,27 @@
+[package]
+name = "echo-adb"
+version = "1.0.0"
+authors = ["Alex Flores <alexmflores@gmail.com>"]
+edition = "2018"
+description = "A command-line tool for echoing lines of text to an Android device using ADB."
+
+documentation = "https://www.github.com/Implox/echo-adb"
+homepage = "https://www.github.com/Implox/echo-adb"
+repository = "https://www.github.com/Implox/echo-adb"
+
+readme = "README.md"
+
+keywords = ["android", "adb", "echo"]
+
+license = "WTFPL"
+
+[dependencies]
+regex = "1.1.0"
+
+[lib]
+name = "echo_adb"
+path = "src/lib.rs"
+
+[[bin]]
+name = "echo-adb"
+path = "src/main.rs"
