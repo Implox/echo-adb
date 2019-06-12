@@ -4,6 +4,7 @@ extern crate regex;
 use std::env;
 use std::io;
 use std::io::Read;
+use std::str;
 
 use echo_adb::*;
 
@@ -14,9 +15,11 @@ fn main() {
     }) {
         let escaped_input = escape_text(input_str);
         let output = echo_adb(escaped_input);
-        println!(
-            "Status: {:?}\nStdout: {:?}\nStderr: {:?}",
-            output.status, output.stdout, output.stderr
-        );
+        let stderr_utf8 = str::from_utf8(&output.stderr).unwrap();
+
+        println!("Command exited with status: {:?}", output.status);
+        if stderr_utf8.len() > 0 {
+            println!("{}", stderr_utf8);
+        }
     }
 }
