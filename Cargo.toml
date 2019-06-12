@@ -1,6 +1,6 @@
 [package]
 name = "echo-adb"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Alex Flores <alexmflores@gmail.com>"]
 edition = "2018"
 description = "A command-line tool for echoing lines of text to an Android device using ADB."
